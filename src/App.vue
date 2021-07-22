@@ -1,28 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <b-navbar type="is-primary">
+      <template #brand>
+        <b-navbar-item tag="router-link" :to="{ path: '/' }">
+          <b>Tiny Expense Manager</b> 
+        </b-navbar-item>
+      </template>
+      <template #start>
+      </template>
+      <template #end>
+        <b-navbar-item tag="router-link" :to="{ path: '/' }">
+          Home
+        </b-navbar-item>
+        <b-navbar-item tag="router-link" :to="{ path: '/about' }"> About </b-navbar-item>
+        <b-navbar-item href="#"> Privacy Policy </b-navbar-item>
+      </template>
+    </b-navbar>
+    <router-view/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
