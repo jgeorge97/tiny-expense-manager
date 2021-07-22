@@ -13,7 +13,7 @@
           Home
         </b-navbar-item>
         <b-navbar-item tag="router-link" :to="{ path: '/about' }"> About </b-navbar-item>
-        <b-navbar-item href="#"> Privacy Policy </b-navbar-item>
+        <b-navbar-item tag="router-link" :to="{ path: '/privacy-policy' }"> Privacy Policy </b-navbar-item>
       </template>
     </b-navbar>
     <router-view/>
