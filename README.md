@@ -1,4 +1,10 @@
-# tiny-expense-manager
+# Tiny Expense Manager
+
+Tiny Expense Manager is a simple expense manager to keep track of earning's and expenses. All the data is stored in LocalStorage.
+
+## Technologies Used
+- Vue 2
+- Buefy
 
 ## Project setup
 ```
