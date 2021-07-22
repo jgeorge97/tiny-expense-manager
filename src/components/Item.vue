@@ -9,21 +9,26 @@
       <div class="title"><span :class="isIncome?'has-text-success':'has-text-danger'">₹{{ amount }}</span></div>
       <div class="subtitle">{{ description }}</div>
     </div>
-    <!-- <footer class="card-footer">
-        <a href="#" class="card-footer-item">Delete</a>
-    </footer> -->
+    <footer class="card-footer">
+        <a @click="deleteItem" class="card-footer-item">Delete</a>
+    </footer>
   </div>
 </template>
 
 <script>
 export default {
-    name: "Item",
-    props: {
-      description: String,
-      amount: Number,
-      isIncome: Boolean,
-      date: String
+  name: "Item",
+  props: {
+    description: String,
+    amount: Number,
+    isIncome: Boolean,
+    date: String
+  },
+  methods: {
+    deleteItem() {
+      this.$emit('delete-item');
     }
+  }
 }
 </script>
 

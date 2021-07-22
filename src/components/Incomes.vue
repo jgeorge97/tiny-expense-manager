@@ -7,7 +7,7 @@
     </div>
     <div class="columns is-centered">
       <div class="column is-half" v-if="incomeList.length !== 0">
-        <Item v-for="income in incomeList" v-bind:key="income.id" :description="income.description" v-bind:amount="income.amount" :isIncome="true" :date="income.date" class="items" />
+        <Item v-for="income in incomeList" v-bind:key="income.id" :description="income.description" v-bind:amount="income.amount" :isIncome="true" :date="income.date" class="items" v-on:delete-item="deleteItem(income.id)" />
       </div>
       <div class="notification is-warning" v-else>
         No Incomes Found. Try Adding some.
@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import Item from "@/views/Item";
+import Item from "@/components/Item";
 import { v4 as uuidv4 } from 'uuid';
 export default {
   name: 'Incomes',
@@ -91,6 +91,21 @@ export default {
       this.description = '';
       this.amount = '';
       this.isCardModalActive = false;
+      this.$buefy.notification.open({
+        duration: 2500,
+        message: `Created`,
+        type: 'is-success',
+      });
+    },
+    async deleteItem(id) {
+      this.incomeList = this.incomeList.filter(function (ele) {
+        return ele.id !== id
+      });
+      this.$buefy.notification.open({
+        duration: 2500,
+        message: `Deleted`,
+        type: 'is-success',
+      });
     }
   },
   components: {

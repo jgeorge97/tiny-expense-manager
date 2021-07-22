@@ -13,8 +13,8 @@
 
 <script>
 // @ is an alias to /src
-import Expenses from "@/views/Expenses";
-import Incomes from "@/views/Incomes";
+import Expenses from "@/components/Expenses";
+import Incomes from "@/components/Incomes";
 export default {
   name: 'Home',
   components: {
