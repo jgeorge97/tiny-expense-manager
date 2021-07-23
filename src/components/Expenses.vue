@@ -61,21 +61,19 @@ export default {
     },
     async addExpense() {
       if(!this.description) {
-        this.$buefy.notification.open({
-          duration: 2500,
-          message: `Description required!!`,
-          type: 'is-danger',
-          hasIcon: false
+        this.$buefy.snackbar.open({
+          message: 'Description required!!',
+          type: 'is-warning',
+          position: 'is-bottom'
         });
         return;
       }
 
       if(!this.amount) {
-        this.$buefy.notification.open({
-          duration: 2500,
-          message: `Amount required!!`,
-          type: 'is-danger',
-          hasIcon: false
+        this.$buefy.snackbar.open({
+          message: 'Amount required!!',
+          type: 'is-warning',
+          position: 'is-bottom'
         });
         return;
       }
@@ -91,20 +89,20 @@ export default {
       this.description = '';
       this.amount = '';
       this.isCardModalActive = false;
-      this.$buefy.notification.open({
-        duration: 2500,
-        message: `Created`,
+      this.$buefy.snackbar.open({
+        message: 'Created!!',
         type: 'is-success',
+        position: 'is-bottom'
       });
     },
     async deleteItem(id) {
       this.expenseList = this.expenseList.filter(function (ele) {
         return ele.id !== id
       });
-      this.$buefy.notification.open({
-        duration: 2500,
-        message: `Deleted`,
+      this.$buefy.snackbar.open({
+        message: 'Deleted!!',
         type: 'is-success',
+        position: 'is-bottom'
       });
     }
   },
