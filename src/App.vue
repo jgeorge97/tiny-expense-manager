@@ -17,6 +17,13 @@
       </template>
     </b-navbar>
     <router-view/>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>Tiny Expense Manager</strong> by <a href="https://github.com/jgeorge97">George Martin Jose</a>
+        </p>
+      </div>
+    </footer>
   </div>
 </template>
 

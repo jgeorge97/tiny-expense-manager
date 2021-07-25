@@ -8,6 +8,11 @@ Tiny Expense Manager is a simple expense manager to keep track of earning's and 
 - Vue 2
 - Buefy
 
+### Todo
+
+- [ ] Backup Records
+- [ ] Custom Date Time
+
 ## Project setup
 ```
 npm install
